@@ -20,8 +20,8 @@ Rem            If you intend to modify or specify them outside, keep the scheme!
 Rem ************************************************************************************************************************************************************************************
 Rem Branding options
 
-if "%APP_NAME%" == ""                       set APP_NAME=Nextcloud
-if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=Nextcloud
+if "%APP_NAME%" == ""                       set APP_NAME=OliveDrive
+if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=OliveDrive
 
 if "%USE_BRANDING%" == ""                   set USE_BRANDING=0
 
@@ -118,7 +118,7 @@ Rem thietnp disable code signing
 if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=0
 
 Rem Vendor Name: Used for signing, also used by the installer
-if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=Nextcloud GmbH
+if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=OliveDrive GmbH
 
 Rem PFX Key and Password - it may be a good idea to set the password outside (environment variables)
 if "%P12_KEY%" == ""                        set P12_KEY=%PROJECT_PATH%\key\%APPLICATION_VENDOR%.p12

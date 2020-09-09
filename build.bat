@@ -39,18 +39,18 @@ Rem ****************************************************************************
 rem 			"qtkeychain"
 Rem ******************************************************************************************
 
-echo "***** build qtkeychain."
-start "build-qtkeychain.bat %BUILD_TYPE%" /D "%PROJECT_PATH%/" /B /wait "%~dp0/build-qtkeychain.bat" %BUILD_TYPE%
-if %ERRORLEVEL% neq 0 goto onError
+Rem echo "***** build qtkeychain."
+Rem start "build-qtkeychain.bat %BUILD_TYPE%" /D "%PROJECT_PATH%/" /B /wait "%~dp0/build-qtkeychain.bat" %BUILD_TYPE%
+Rem if %ERRORLEVEL% neq 0 goto onError
 
 
 Rem ******************************************************************************************
 rem 			"zlib"
 Rem ******************************************************************************************
 
-echo "***** build zlib."
-start "build-zlib.bat %BUILD_TYPE%" /D "%PROJECT_PATH%/" /B /wait "%~dp0/build-zlib.bat" %BUILD_TYPE%
-if %ERRORLEVEL% neq 0 goto onError
+Rem echo "***** build zlib."
+Rem start "build-zlib.bat %BUILD_TYPE%" /D "%PROJECT_PATH%/" /B /wait "%~dp0/build-zlib.bat" %BUILD_TYPE%
+Rem if %ERRORLEVEL% neq 0 goto onError
 
 
 Rem ******************************************************************************************
