@@ -29,14 +29,14 @@ Rem ****************************************************************************
 Rem Build environment
 
 rem Comma separated list of build targets (default: Win64, Win32)
-if "%BUILD_TARGETS%" == ""                  set BUILD_TARGETS=Win64,Win32
+if "%BUILD_TARGETS%" == ""                  set BUILD_TARGETS=Win64
 
 if "%PROJECT_PATH%" == ""                   set PROJECT_PATH=c:/Nextcloud/client-building
-if "%QT_PATH%" == ""                        set QT_PATH=c:/Qt/5.12.9
+if "%QT_PATH%" == ""                        set QT_PATH=C:\Qt\Qt5.12.9\5.12.9
 
-                                            set PATH=c:/Nextcloud/tools/cmake/bin;c:/Nextcloud/tools;C:/Program Files (x86)/NSIS;%PATH%
+                                            set PATH=C:\Nextcloud\tools\cmake\bin;C:\Nextcloud\tools;C:\Program Files (x86)\NSIS;%PATH%
 
-if "%OPENSSL_PATH%" == ""                   set OPENSSL_PATH=c:/OpenSSL
+if "%OPENSSL_PATH%" == ""                   set OPENSSL_PATH=C:\OpenSSL
 
 if "%Png2Ico_EXECUTABLE%" == ""             set Png2Ico_EXECUTABLE=c:/Nextcloud/tools/png2ico.exe
 
@@ -45,10 +45,10 @@ if "%VS_VERSION%" == ""                     set VS_VERSION=2019
 Rem Required for Qt's windeployqt to find the VC Redist Setup (and for auto-discovery of signtool.exe)
 if "%VCINSTALLDIR%" == "" (
 	if "%VS_VERSION%" == "2017"	(
-		set VCINSTALLDIR=C:\Program^ Files^ ^(x86^)\Microsoft^ Visual^ Studio\2017\Community\VC
+		set VCINSTALLDIR=C:\Program^ Files^ ^(x86^)\Microsoft^ Visual^ Studio\2017\Professional\VC
 	)
 	if "%VS_VERSION%" == "2019"	(
-		set VCINSTALLDIR=C:\Program^ Files^ ^(x86^)\Microsoft^ Visual^ Studio\2019\Community\VC
+		set VCINSTALLDIR=C:\Program^ Files^ ^(x86^)\Microsoft^ Visual^ Studio\2019\Enterprise\VC
 	)
 )
 
@@ -113,14 +113,18 @@ if "%INSTALLER_OUTPUT_PATH%" == ""          set INSTALLER_OUTPUT_PATH=%PROJECT_P
 
 Rem ************************************************************************************************************************************************************************************
 Rem Code Signing Options: 1 = enable (default), 0 = disable
-if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=1
+Rem if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=1
+Rem thietnp disable code signing
+if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=0
 
 Rem Vendor Name: Used for signing, also used by the installer
 if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=Nextcloud GmbH
 
 Rem PFX Key and Password - it may be a good idea to set the password outside (environment variables)
 if "%P12_KEY%" == ""                        set P12_KEY=%PROJECT_PATH%\key\%APPLICATION_VENDOR%.p12
-if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=
+Rem if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=
+Rem thietnp
+if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=abc123
 
 if "%SIGN_FILE_DIGEST_ALG%" == ""           set SIGN_FILE_DIGEST_ALG=sha256
 if "%SIGN_TIMESTAMP_URL%" == ""             set SIGN_TIMESTAMP_URL=http://tsa.swisssign.net
